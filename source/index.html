@@ -6,6 +6,7 @@
   <title>Main page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 </head>
 
 <body class="page__body">
@@ -129,8 +130,38 @@
           <a class="figma-hints__button" href="#">Зарегистрироваться</a>
         </div>
       </section>
+
+      <section class="scale-skills">
+        <input class="scale" type="range" min="0" max="100" value="75" step="25" oninput="range()">
+      </section>
     </div>
   </main>
 </body>
+<script>
+  function range() {
+    console.log ('hello');
+    let val = $('.scale').val();
+    let cssVal = 'linear-gradient(90deg, #BFA4FF 0%, ';
+    switch(val) {
+      case '0':
+        cssVal = 'linear-gradient(90deg, #23364C 0%, #23364C 100%)';
+      break;
+      case '25':
+        cssVal += '#FF4F72 25%, #23364C 25%, #23364C 100%)';
+      break;
+      case '50':
+        cssVal += '#FF4F72 25%, #FFC359 50%, #23364C 50%, #23364C 100%)';
+      break;
+      case '75':
+        cssVal += '#FF4F72 25%, #FFC359 50%, #FFC359 75%, #23364C 75%, #23364C 100%)';
+      break;
+      default:
+        cssVal = 'linear-gradient(90deg, #BFA4FF 0%, #FF4F72 25%, #FFC359 50%, #FFC359 75%)';
+    }
+    $('.scale').css('background', cssVal);
+    console.log(val);
+    console.log(cssVal);
+  }
+</script>
 
 </html>
