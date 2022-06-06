@@ -1,33 +1,217 @@
 body {
   margin: 0;
+  font-family: "Roboto", "Arial", sans-serif;
+  box-sizing: border-box;
 }
 a {
   text-decoration: none;
-}
-li {
-  list-style-type: none;
 }
 ul {
   margin: 0;
   padding: 0;
 }
+@font-face {
+  font-family: "Roboto";
+  src: url("/test/source/fonts/Roboto-Black.ttf") format("ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("/test/source/fonts/Roboto-Black.ttf") format("ttf");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+.main-header {
+  background-image: url("/img/vector-header.svg");
+  background-repeat: no-repeat;
+  background-position: top right;
+  height: 100vh;
+}
+.main-header__scroll {
+  position: sticky;
+  top: 0;
+}
 .main-header__wrapper {
   margin: 0 auto;
   display: flex;
   flex-direction: row;
-}
-.main-header__logo-wrapper {
-  margin-right: 97px;
-}
-.main-nav {
-  margin-top: 32px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 32px;
 }
 .main-nav__list {
   display: flex;
   flex-direction: row;
   align-items: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+.main-nav__item {
+  margin-right: 40px;
+  padding: 15px 0;
+}
+.main-nav__item--button {
+  margin-left: 20px;
+}
+.main-nav__link {
+  color: #405063;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+}
+.main-nav__button {
+  color: #ffffff;
+  background-color: #489AFF;
+  padding: 13px 37px;
+  border-radius: 500px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  text-transform: uppercase;
 }
 .container {
-  margin: 0 195px;
+  margin: 0 auto;
+  max-width: 1050px;
+}
+.first-screen {
+  margin-top: 76px;
+  background-image: url("/img/header-img.png");
+  background-repeat: no-repeat;
+  background-position: 76% 60%;
+}
+.first-screen__wrapper {
+  max-width: 420px;
+}
+.first-screen__title {
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 42px;
+  color: #405063;
+  margin: 11px 0;
+}
+.first-screen__description {
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 19px;
+  color: #818D9C;
+}
+.first-screen__contents {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
+  color: #405063;
+}
+.first-screen__list {
+  list-style: none;
+}
+.first-screen__item {
+  position: relative;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 18px;
+  color: #405063;
+  padding-left: 15px;
+}
+.first-screen__list .first-screen__item::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: #489AFF;
+  left: 0;
+  top: 6px;
+  border-radius: 8px;
+}
+.first-screen__footer {
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 19px;
+  color: #405063;
+}
+.introduction {
+  max-width: 871px;
+  margin: 0 auto;
+  border-top: 1px solid #E3E8EF;
+  border-bottom: 1px solid #E3E8EF;
+  padding: 27px 0;
+}
+.introduction__text {
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 19px;
+  color: #818D9C;
+  max-width: 621px;
+  text-align: center;
+  margin: 0 auto;
+}
+.introduction__list {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  justify-content: center;
+  margin-top: 32px;
+}
+.introduction__item {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #405063;
+  width: 130px;
+  margin-right: 52px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.introduction__icon {
+  margin-bottom: 12px;
+}
+.figma-hints {
+  display: flex;
+  justify-content: center;
+  margin-top: 95px;
+}
+.figma-hints__images {
+  margin-right: 60px;
+  position: relative;
+}
+.figma-hints__image--first {
+  position: absolute;
+  top: 62px;
+}
+.figma-hints__image--second {
+  margin-left: 100px;
+}
+.figma-hints__wrapper {
+  max-width: 450px;
+  padding-top: 30px;
+}
+.figma-hints__title {
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 42px;
+  color: #405063;
+  margin: 10px 0;
+}
+.figma-hints__description {
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 19px;
+  color: #818D9C;
+  max-width: 450px;
+  margin: 0 0 25px 0;
+}
+.figma-hints__button {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background-color: #489AFF;
+  border-radius: 500px;
+  padding: 14px 30px;
 }
 /*# sourceMappingURL=style.css.map */
