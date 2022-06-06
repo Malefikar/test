@@ -6,7 +6,7 @@
   <title>Main page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
-  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
 </head>
 
 <body class="page__body">
@@ -132,36 +132,36 @@
       </section>
 
       <section class="scale-skills">
-        <input class="scale" type="range" min="0" max="100" value="75" step="25" oninput="range()">
+        <div class="scale-skills__wrapper">
+          <img class="scale-skills__icon" src="img/smile-star.png" alt="смайлик со звёздами" width="40" height="40">
+          <h2 class="scale-skills__title">Оцени себя</h2>
+          <p class="scale-skills__description">Попробуй максимально объективно и честно оценить свои знания верстки по
+            следующей шкале. И да, её тоже нужно сверстать.</p>
+        </div>
+        <input class="scale-skills__input" type="range" list="tickmarks" name="tickmarks" min="0" max="100" value="75"
+          step="25" oninput="range()">
+        <datalist class="scale-skills__list" id="tickmarks">
+          <option class="scale-skills__marks" value=0 label="Intern"></option>
+          <option class="scale-skills__marks" value=25 label="Junior"></option>
+          <option class="scale-skills__marks" value=50 label="Middle"></option>
+          <option class="scale-skills__marks" value=75 label="Senior"></option>
+          <option class="scale-skills__marks" value=100 label="Lead"></option>
+        </datalist>
+
+        <svg class="scale-skills-ring scale-skills-ring--first" width="120" height="120">
+          <circle class="scale-skills__circle scale-skills__circle--first" cx="60" cy="60" r="58"></circle>
+        </svg>
+        <svg class="scale-skills-ring scale-skills-ring--second" width="120" height="120">
+          <circle class="scale-skills__circle scale-skills__circle--second" cx="60" cy="60" r="58"></circle>
+        </svg>
       </section>
     </div>
   </main>
+
+  <script src="js/scale.js"></script>
+  <script src="js/ring.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
 </body>
-<script>
-  function range() {
-    console.log ('hello');
-    let val = $('.scale').val();
-    let cssVal = 'linear-gradient(90deg, #BFA4FF 0%, ';
-    switch(val) {
-      case '0':
-        cssVal = 'linear-gradient(90deg, #23364C 0%, #23364C 100%)';
-      break;
-      case '25':
-        cssVal += '#FF4F72 25%, #23364C 25%, #23364C 100%)';
-      break;
-      case '50':
-        cssVal += '#FF4F72 25%, #FFC359 50%, #23364C 50%, #23364C 100%)';
-      break;
-      case '75':
-        cssVal += '#FF4F72 25%, #FFC359 50%, #FFC359 75%, #23364C 75%, #23364C 100%)';
-      break;
-      default:
-        cssVal = 'linear-gradient(90deg, #BFA4FF 0%, #FF4F72 25%, #FFC359 50%, #FFC359 75%)';
-    }
-    $('.scale').css('background', cssVal);
-    console.log(val);
-    console.log(cssVal);
-  }
-</script>
 
 </html>
