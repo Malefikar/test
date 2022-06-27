@@ -63,7 +63,7 @@ ul {
 }
 .first-screen {
   margin-top: 76px;
-  background-image: url("/img/header-img.png");
+  background-image: url("../img/header-img.png");
   background-repeat: no-repeat;
   background-position: 76% 60%;
 }
@@ -309,7 +309,7 @@ ul {
 }
 .slider {
   padding-bottom: 90px;
-  background-image: url("/img/slider-bc.png");
+  background-image: url("../img/slider-bc.png");
   background-repeat: no-repeat;
   background-position: 0 180px;
 }
@@ -512,7 +512,7 @@ ul {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-image: url("/img/right-arrow.svg");
+  background-image: url("../img/right-arrow.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-color: inherit;
@@ -550,7 +550,7 @@ ul {
   display: flex;
 }
 .page__body {
-  background-image: url(/img/vector-header.svg);
+  background-image: url("../img/vector-header.svg");
   background-repeat: no-repeat;
   background-position: top right;
 }
@@ -1002,9 +1002,10 @@ ul {
 }
 .modal__container {
   position: fixed;
-  left: 15%;
+  left: 20%;
   top: 0;
   z-index: 2;
+  width: 100%;
 }
 .modal__list {
   display: flex;
@@ -1048,7 +1049,7 @@ ul {
 .modal__body {
   position: fixed;
   top: 25%;
-  left: 30%;
+  left: 33%;
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -1076,7 +1077,7 @@ ul {
   bottom: 0;
   z-index: 2;
   width: 100%;
-  left: 10%;
+  left: 18%;
 }
 .modal__footer-wrapper {
   display: flex;

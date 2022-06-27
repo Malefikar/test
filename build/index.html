@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>Main page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="source/css/style.css">
+  <link rel="stylesheet" href="css/style.min.css">
 
 </head>
 
@@ -105,7 +105,7 @@
             <a class="main-nav__link" href="#">При скролле</a>
           </li>
           <li class="main-nav__item main-nav__item--button">
-            <a class="main-nav__button" href="#">Модалка</a>
+            <a class="main-nav__button modal__button" href="#">Модалка</a>
           </li>
         </ul>
       </div>
@@ -623,7 +623,7 @@
   <!-- modal--opened - окно открыто,  modal--closed - окно закрыто -->
 
   <div class="modal modal--closed">
-    <div class="modal__background"></div>
+    <div class="modal__background">
     <div class="container modal__container">
       <nav class="main-nav modal__nav">
         <div class="modal__wrapper">
@@ -649,7 +649,7 @@
               <a class="modal__link" href="#">При скролле</a>
             </li>
             <li class="modal__item modal__item--button">
-              <a class="modal__button" href="#">Отправить</a>
+              <a class="modal__button modal__button--return" href="#">Отправить</a>
             </li>
           </ul>
         </div>
@@ -662,7 +662,7 @@
       <p class="modal__tittle">Страница не найдена</p>
       <p class="modal__description">К сожалению, такой страницы нет. Либо администратор сайта ее удалил, либо ее никогда
         не существовало. Попробуйте проверить адрес страницы или начните с Главной.</p>
-      <button class="modal__button modal__button--return">На главную</button>
+      <button class="modal__button modal__button--return" type="button">На главную</button>
     </div>
 
     <div class="container modal__footer">
@@ -673,6 +673,7 @@
         </p>
       </div>
     </div>
+  </div>
   </div>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
