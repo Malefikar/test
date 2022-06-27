@@ -3,6 +3,8 @@ import plumber from 'gulp-plumber';
 import less from 'gulp-less';
 import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
+import csso from 'postcss-csso';
+import squoosh from 'gulp-libsquoosh';
 import browser from 'browser-sync';
 import rename from 'gulp-rename';
 import svgo from 'gulp-svgmin';
@@ -16,9 +18,12 @@ export const styles = () => {
     .pipe(plumber())
     .pipe(less())
     .pipe(postcss([
-      autoprefixer()
+      autoprefixer(),
+      csso()
     ]))
-    .pipe(gulp.dest('source/css', { sourcemaps: '.' }))
+    .pipe(rename('style.min.css'))
+    .pipe(gulp.dest('build/css', { sourcemaps: '.' }))
+     pipe(gulp.dest('source/css', { sourcemaps: '.' }))
     .pipe(browser.stream());
 }
 
@@ -28,6 +33,14 @@ const html = () => {
   return gulp.src('source/*.html')
     .pipe(gulp.dest('build'));
 }
+
+  // Scripts
+
+const scripts = () => {
+  return gulp.src('source/js/*.js')
+    .pipe(gulp.dest('build/js'))
+    .pipe(browser.stream());
+  }
 
   // Images
 
@@ -57,9 +70,7 @@ const sprite = () => {
 
 const copy = (done) => {
   gulp.src([
-    'source/fonts/*.{woff2,woff}',
-    'source/*.ico',
-    'source/*.webmanifest'
+    'source/fonts/*.{woff2,woff}'
   ], {
   base: 'source'
   })
@@ -98,9 +109,25 @@ const server = (done) => {
 
 const watcher = () => {
   gulp.watch('source/less/**/*.less', gulp.series(styles));
+  gulp.watch('source/js/script.js', gulp.series(scripts));
   gulp.watch('source/*.html', gulp.series(html, reload));
 }
 
+
+export const build = gulp.series(
+  clean,
+  copy,
+  copyImages,
+  gulp.parallel(
+    styles,
+    html,
+    scripts,
+    svg,
+    sprite,
+  ),
+  );
+
+  // Default
 
 export default gulp.series(
   clean,
@@ -109,6 +136,7 @@ export default gulp.series(
   gulp.parallel(
     styles,
     html,
+    scripts,
     svg,
     sprite,
   ),
