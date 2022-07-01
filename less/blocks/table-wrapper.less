@@ -1,0 +1,127 @@
+@media (min-width: @desktop-width) {
+.table-wrapper__tariff, .table-wrapper__row,  .table-wrapper__cell, .table-wrapper__head {
+  border: 1px solid #D7E1EC;
+  margin: 0 auto;
+}
+
+.table-wrapper__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 90px;
+}
+
+.table-wrapper__title {
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 35px;
+  text-align: center;
+  color: #405063;
+  margin: 12px 0 14px 0;
+}
+
+.table-wrapper__description {
+  width: 617px;
+  margin: 0 0 24px 0;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 19px;
+  text-align: center;
+  color: #818D9C;
+}
+
+.table-wrapper__tariff {
+  margin-bottom: 175px;
+  border-collapse: collapse;
+  max-width: 1050px;
+}
+
+.table-wrapper__head {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+  color: #405063;
+  height: 189px;
+  padding-top: 80px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.table-wrapper__text {
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 17px;
+  text-align: center;
+  color: #818D9C;
+  margin: 7px 0 20px 0;
+}
+
+.table-wrapper__cell {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: #405063;
+  text-align: center;
+  position: relative;
+}
+
+.table-wrapper__cell--first {
+  text-align: left;
+  min-width: 329px;
+  padding: 18px 0 17px 20px;
+}
+
+.table-wrapper__cell--second,
+.table-wrapper__cell--third,
+.table-wrapper__cell--four {
+  width: 241px;
+}
+
+.table-wrapper__icon {
+  position: absolute;
+  top: 10%;
+  left: 44%;
+}
+
+.table-wrapper__head--blue,
+.table-wrapper__cell--blue {
+  background-color: #F2F8FF;
+}
+
+.table-wrapper__head--purple,
+.table-wrapper__cell--purple {
+  background-color: #F7F4FF;
+}
+
+.table-wrapper__head--red,
+.table-wrapper__cell--red {
+  background-color: #FFF1F8;
+}
+
+.table-wrapper__cell--check::before {
+  content: "";
+  width: 7px;
+  height: 1px;
+  background-color: #FF56A9;
+  position: absolute;
+  transform: rotate(40deg);
+  left: 48%;
+}
+
+.table-wrapper__cell--check::after {
+  content: "";
+  width: 11px;
+  height: 1px;
+  background-color: #FF56A9;
+  position: absolute;
+  transform: rotate(-50deg);
+  top: 47%;
+  left: 50%;
+}
+
+.table-wrapper__cell--purple.table-wrapper__cell--check::after,
+.table-wrapper__cell--purple.table-wrapper__cell--check::before {
+  background-color: #9570EE;
+}
+}
